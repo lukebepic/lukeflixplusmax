@@ -4257,7 +4257,7 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
 
 .layout-desktop #indexPage .itemsContainer .card.backdropCard,
 .layout-tv #indexPage .itemsContainer .card.backdropCard {
-  flex: 1 0 calc((100% - (0.5rem * 5)) / 6);
+  flex: 1 0 calc((100% - (0.5rem * 2)) / 3);
 }
 
 .layout-desktop .mediaInfoStream,
