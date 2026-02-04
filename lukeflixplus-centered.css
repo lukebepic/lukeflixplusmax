@@ -1,0 +1,634 @@
+/* LUKEFLIX+ MAX - CENTERED DETAIL LAYOUT */
+/* Based on ElegantFin style with your branding */
+
+@import url('https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* ========================================
+   COLORS - LUKEFLIX+ BLUE
+   ======================================== */
+:root {
+  --accent: 55, 150, 203;
+  --tint: 34, 33, 96;
+  --tint2: 55, 150, 203;
+  --rounding: 0.8em;
+}
+
+body {
+  font-family: "Geom", sans-serif;
+}
+
+html, body, .backgroundContainer, .preload {
+  background-color: #222160 !important;
+}
+
+/* ========================================
+   HOME PAGE - 3 CATEGORY CARDS
+   ======================================== */
+.layout-desktop #homeTab .section0 .itemsContainer .card,
+.layout-tv #homeTab .section0 .itemsContainer .card {
+  flex: 0 0 30% !important;
+  width: 30% !important;
+  max-width: 30% !important;
+}
+
+/* ========================================
+   HORIZONTAL SCROLLING - HOME PAGE
+   ======================================== */
+.layout-desktop .homePage .itemsContainer:not(.vertical-wrap),
+.layout-tv .homePage .itemsContainer:not(.vertical-wrap) {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  scroll-behavior: smooth !important;
+  gap: 0.5em !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(55, 150, 203, 0.5) rgba(34, 33, 96, 0.3) !important;
+}
+
+/* Webkit scrollbar styling */
+.layout-desktop .homePage .itemsContainer:not(.vertical-wrap)::-webkit-scrollbar,
+.layout-tv .homePage .itemsContainer:not(.vertical-wrap)::-webkit-scrollbar {
+  height: 8px !important;
+}
+
+.layout-desktop .homePage .itemsContainer:not(.vertical-wrap)::-webkit-scrollbar-track,
+.layout-tv .homePage .itemsContainer:not(.vertical-wrap)::-webkit-scrollbar-track {
+  background: rgba(34, 33, 96, 0.3) !important;
+  border-radius: 10px !important;
+}
+
+.layout-desktop .homePage .itemsContainer:not(.vertical-wrap)::-webkit-scrollbar-thumb,
+.layout-tv .homePage .itemsContainer:not(.vertical-wrap)::-webkit-scrollbar-thumb {
+  background: rgba(55, 150, 203, 0.5) !important;
+  border-radius: 10px !important;
+}
+
+.layout-desktop .homePage .itemsContainer:not(.vertical-wrap)::-webkit-scrollbar-thumb:hover,
+.layout-tv .homePage .itemsContainer:not(.vertical-wrap)::-webkit-scrollbar-thumb:hover {
+  background: rgba(55, 150, 203, 0.8) !important;
+}
+
+/* Scroll buttons with animations */
+button[data-direction="left"],
+button[data-direction="right"] {
+  opacity: 0.5 !important;
+  background: rgba(34, 33, 96, 0.8) !important;
+  border: 1px solid rgba(55, 150, 203, 0.4) !important;
+  border-radius: 50% !important;
+  transition: opacity 0.3s ease, transform 0.2s ease, background 0.3s ease !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+button[data-direction="left"]:hover,
+button[data-direction="right"]:hover {
+  opacity: 1 !important;
+  transform: scale(1.15) !important;
+  background: rgba(55, 150, 203, 0.4) !important;
+  border-color: rgba(55, 150, 203, 0.8) !important;
+  box-shadow: 0 0 15px rgba(55, 150, 203, 0.5) !important;
+}
+
+button[data-direction="left"]:active,
+button[data-direction="right"]:active {
+  transform: scale(1.05) !important;
+}
+
+/* ========================================
+   HEADER - BLUE WITH BLUR
+   ======================================== */
+.skinHeader-blurred:not(.osdHeader) {
+  backdrop-filter: blur(10px) !important;
+  background-color: rgba(34, 33, 96, 0.8) !important;
+}
+
+.skinHeader:not(.osdHeader) {
+  background: rgba(34, 33, 96, 0.9) !important;
+  border-bottom: 1px solid rgba(55, 150, 203, 0.3) !important;
+}
+
+.pageTitleWithDefaultLogo {
+  background-image: url('https://raw.githubusercontent.com/lukebepic/lukeflixplusmax/main/logo-header.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+  width: 250px !important;
+  height: 60px !important;
+  margin-left: 10px !important;
+}
+
+.pageTitleWithDefaultLogo::before {
+  content: '' !important;
+}
+
+/* ========================================
+   DETAIL PAGE - CENTERED LAYOUT LIKE ELEGANTFIN
+   ======================================== */
+
+/* Make backdrop visible and tall */
+.itemBackdrop {
+  height: 60vh !important;
+  opacity: 0.5 !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 0 !important;
+}
+
+/* Wrapper with gradient */
+.detailPageWrapperContainer {
+  background: linear-gradient(to bottom, transparent 40%, #222160 100%) !important;
+  position: relative !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Main container - positioned over backdrop */
+.detailPagePrimaryContainer {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: center !important;
+  padding: 12vh 2em 2em 2em !important;
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 55vh !important;
+}
+
+/* Hide the poster thumbnail */
+.detailImageContainer {
+  display: none !important;
+}
+
+/* Force all content to be visible and in order */
+.detailPageSecondaryContainer {
+  width: 100% !important;
+  max-width: 1200px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/* Ensure name container is visible */
+.nameContainer {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-bottom: 1em !important;
+  order: -10 !important;
+}
+
+/* Movie/show title - LARGE at top - FORCE VISIBILITY */
+.itemName {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 4em !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  margin: 0 0 0.3em 0 !important;
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9) !important;
+  line-height: 1.1 !important;
+  color: white !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+/* Tagline below title */
+.tagline {
+  display: block !important;
+  visibility: visible !important;
+  font-size: 1.5em !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  margin: 0 0 0.8em 0 !important;
+  opacity: 0.95 !important;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9) !important;
+  order: -9 !important;
+}
+
+/* Metadata row (year, runtime, rating) */
+.itemMiscInfo-primary {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1.2em !important;
+  flex-wrap: wrap !important;
+  margin: 0 0 1.5em 0 !important;
+  font-size: 1.1em !important;
+  order: -8 !important;
+}
+
+/* Play and action buttons - PROMINENT */
+.mainDetailButtons {
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 0.8em !important;
+  margin: 0 0 2em 0 !important;
+  z-index: 100 !important;
+  order: -7 !important;
+}
+
+.detailButton {
+  background: rgba(50, 49, 110, 0.8) !important;
+  border: 1px solid rgba(55, 150, 203, 0.6) !important;
+  border-radius: 0.5em !important;
+  padding: 0.8em 1.8em !important;
+  backdrop-filter: blur(10px) !important;
+  transition: all 0.2s !important;
+  font-size: 1.05em !important;
+}
+
+.detailButton:hover {
+  background: rgba(55, 150, 203, 0.5) !important;
+  border-color: rgba(55, 150, 203, 0.9) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 4px 16px rgba(55, 150, 203, 0.5) !important;
+}
+
+.btnPlay {
+  background: rgb(55, 150, 203) !important;
+  border-color: rgb(55, 150, 203) !important;
+  font-weight: 700 !important;
+  font-size: 1.15em !important;
+  padding: 0.9em 2.5em !important;
+}
+
+.btnPlay:hover {
+  background: rgb(70, 165, 218) !important;
+  box-shadow: 0 6px 20px rgba(55, 150, 203, 0.7) !important;
+  transform: translateY(-3px) scale(1.05) !important;
+}
+
+/* Description centered and readable */
+.overview {
+  text-align: center !important;
+  max-width: 900px !important;
+  margin: 0 auto 2em !important;
+  font-size: 1.15em !important;
+  line-height: 1.7 !important;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Media selection (Video/Audio/Subtitles) */
+.trackSelections {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 1.5em !important;
+  margin: 1.5em 0 !important;
+  flex-wrap: wrap !important;
+}
+
+.trackSelectionFieldContainer {
+  min-width: 250px !important;
+}
+
+/* Tags centered */
+.itemTags {
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 0.5em !important;
+  margin: 1.5em 0 !important;
+}
+
+/* LUKEFLIX+ LOGO WATERMARK - Transparent PNG */
+.detailPagePrimaryContainer::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 80px !important;
+  right: 40px !important;
+  width: 300px !important;
+  height: 170px !important;
+  background-image: url('https://raw.githubusercontent.com/lukebepic/lukeflixplusmax/main/logo-transparent.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  opacity: 0.25 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7)) !important;
+}
+
+/* ========================================
+   SCROLLABLE CONTENT BELOW
+   ======================================== */
+
+/* HORIZONTAL SCROLLING - CAST & CREW, SIMILAR ITEMS */
+.layout-desktop #itemDetailPage .scrollSlider.itemsContainer,
+.layout-tv #itemDetailPage .scrollSlider.itemsContainer,
+.layout-desktop #castCollapsible .itemsContainer,
+.layout-tv #castCollapsible .itemsContainer,
+.layout-desktop #guestCastCollapsible .itemsContainer,
+.layout-tv #guestCastCollapsible .itemsContainer,
+.layout-desktop #similarCollapsible .itemsContainer,
+.layout-tv #similarCollapsible .itemsContainer,
+.layout-desktop #specialsCollapsible .itemsContainer,
+.layout-tv #specialsCollapsible .itemsContainer {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  scroll-behavior: smooth !important;
+  gap: 0.75em !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(55, 150, 203, 0.5) rgba(34, 33, 96, 0.3) !important;
+}
+
+/* Detail page scrollbar styling */
+.layout-desktop #itemDetailPage .scrollSlider.itemsContainer::-webkit-scrollbar,
+.layout-tv #itemDetailPage .scrollSlider.itemsContainer::-webkit-scrollbar {
+  height: 8px !important;
+}
+
+.layout-desktop #itemDetailPage .scrollSlider.itemsContainer::-webkit-scrollbar-track,
+.layout-tv #itemDetailPage .scrollSlider.itemsContainer::-webkit-scrollbar-track {
+  background: rgba(34, 33, 96, 0.3) !important;
+  border-radius: 10px !important;
+}
+
+.layout-desktop #itemDetailPage .scrollSlider.itemsContainer::-webkit-scrollbar-thumb,
+.layout-tv #itemDetailPage .scrollSlider.itemsContainer::-webkit-scrollbar-thumb {
+  background: rgba(55, 150, 203, 0.5) !important;
+  border-radius: 10px !important;
+}
+
+.layout-desktop #itemDetailPage .scrollSlider.itemsContainer::-webkit-scrollbar-thumb:hover,
+.layout-tv #itemDetailPage .scrollSlider.itemsContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(55, 150, 203, 0.8) !important;
+}
+
+/* Smooth scroll for all containers */
+* {
+  scroll-behavior: smooth !important;
+}
+
+/* Info boxes - compact and clean */
+.itemDetailsGroup {
+  background: rgba(50, 49, 110, 0.6) !important;
+  border: 1px solid rgba(55, 150, 203, 0.3) !important;
+  border-radius: 0.5em !important;
+  margin-top: 2em !important;
+}
+
+.itemDetailsGroup > div:not(:last-child) {
+  border-bottom: 1px solid rgba(55, 150, 203, 0.2) !important;
+}
+
+.detailsGroupItem {
+  padding: 0.7em 1em !important;
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.detailsGroupItem > .label {
+  font-weight: 600 !important;
+  opacity: 0.8 !important;
+}
+
+/* Cast & Crew - horizontal scroll */
+.itemsContainer {
+  gap: 0.5em !important;
+}
+
+/* Card styling */
+.cardScalable {
+  border-radius: 1em !important;
+  border: 1px solid rgba(55, 150, 203, 0.2) !important;
+  overflow: hidden !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+.card:hover .cardScalable {
+  transform: scale(1.05) translateY(-4px) !important;
+  box-shadow: 0 10px 30px rgba(55, 150, 203, 0.5) !important;
+  border-color: rgba(55, 150, 203, 0.6) !important;
+}
+
+.card:active .cardScalable {
+  transform: scale(1.02) translateY(-2px) !important;
+}
+
+/* Card overlay with cyan gradient */
+.cardOverlayContainer {
+  border-radius: 1em !important;
+  border: solid rgba(55, 150, 203, 0.4) 0.1em !important;
+  background: linear-gradient(130deg, rgba(55, 150, 203, 0.2) 20%, rgba(55, 150, 203, 0.1) 40%) !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.card:hover .cardOverlayContainer {
+  opacity: 1 !important;
+}
+
+/* Progress bar */
+.itemProgressBar {
+  background: rgba(255, 255, 255, 0.15) !important;
+  height: 0.35em !important;
+  border-radius: 1em !important;
+  overflow: hidden !important;
+}
+
+.itemProgressBarForeground {
+  background: rgb(55, 150, 203) !important;
+  box-shadow: 0 0 12px rgba(55, 150, 203, 0.8), 0 0 6px rgba(55, 150, 203, 0.6) !important;
+  border-radius: 1em !important;
+  transition: width 0.3s ease !important;
+}
+
+/* Progress bar glow animation on hover */
+.card:hover .itemProgressBarForeground {
+  box-shadow: 0 0 16px rgba(55, 150, 203, 1), 0 0 8px rgba(55, 150, 203, 0.8) !important;
+}
+
+/* Drawer/sidebar */
+.mainDrawer {
+  background-color: rgba(34, 33, 96, 0.95) !important;
+  border-right: 1px solid rgba(55, 150, 203, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Dialog boxes */
+.dialog {
+  backdrop-filter: blur(10px) !important;
+  background-color: rgba(34, 33, 96, 0.95) !important;
+  border-radius: 0.75em !important;
+  border: 1px solid rgba(55, 150, 203, 0.3) !important;
+}
+
+/* Form elements */
+.emby-select,
+.emby-input,
+.emby-textarea {
+  background-color: rgba(50, 49, 110, 0.6) !important;
+  border: 1px solid rgba(55, 150, 203, 0.3) !important;
+  border-radius: 0.5em !important;
+  color: white !important;
+}
+
+.emby-input:focus,
+.emby-textarea:focus,
+.emby-select:focus {
+  border-color: rgb(55, 150, 203) !important;
+  box-shadow: 0 0 8px rgba(55, 150, 203, 0.4) !important;
+}
+
+/* Loading screen */
+.docspinner {
+  background: #222160 !important;
+}
+
+.docspinner::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 500px !important;
+  height: 280px !important;
+  background-image: url('https://raw.githubusercontent.com/lukebepic/lukeflixplusmax/main/logo.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  animation: pulse 2s ease-in-out infinite !important;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Navigation hover */
+.navMenuOption:hover {
+  background: rgba(55, 150, 203, 0.2) !important;
+  border-radius: 0.5em !important;
+}
+
+.navMenuOption-selected {
+  background: rgba(55, 150, 203, 0.4) !important;
+  border: 1px solid rgba(55, 150, 203, 0.6) !important;
+  border-radius: 0.5em !important;
+}
+
+/* ========================================
+   ADDITIONAL ANIMATIONS & POLISH
+   ======================================== */
+
+/* Fade-in animation for content */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.itemsContainer {
+  animation: fadeIn 0.4s ease-out !important;
+}
+
+/* Card entrance animations */
+.card {
+  animation: fadeIn 0.3s ease-out both !important;
+}
+
+.card:nth-child(1) { animation-delay: 0.05s !important; }
+.card:nth-child(2) { animation-delay: 0.1s !important; }
+.card:nth-child(3) { animation-delay: 0.15s !important; }
+.card:nth-child(4) { animation-delay: 0.2s !important; }
+.card:nth-child(5) { animation-delay: 0.25s !important; }
+
+/* Button click animation */
+.raised, .emby-button {
+  transition: transform 0.1s ease, box-shadow 0.2s ease !important;
+}
+
+.raised:active, .emby-button:active {
+  transform: scale(0.95) !important;
+}
+
+/* Spinner with cyan color */
+.mdl-spinner__layer-1,
+.mdl-spinner__layer-2,
+.mdl-spinner__layer-3,
+.mdl-spinner__layer-4 {
+  border-color: rgb(55, 150, 203) !important;
+}
+
+/* Playback indicator glow */
+.playedIndicator {
+  background: rgb(34, 197, 94) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.6) !important;
+}
+
+.countIndicator {
+  background: rgb(55, 150, 203) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 0 8px rgba(55, 150, 203, 0.6) !important;
+}
+
+/* Section headers with subtle animation */
+.sectionTitle {
+  transition: color 0.3s ease !important;
+}
+
+.sectionTitle:hover {
+  color: rgb(55, 150, 203) !important;
+}
+
+/* Backdrop fade-in */
+.itemBackdrop {
+  animation: fadeIn 0.6s ease-out !important;
+}
+
+/* Detail button scale on hover */
+.detailButton {
+  transition: all 0.2s ease !important;
+}
+
+.detailButton:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(55, 150, 203, 0.4) !important;
+}
+
+.detailButton:active {
+  transform: translateY(0) !important;
+}
+
+/* Smooth page transitions */
+.mainAnimatedPages {
+  animation: fadeIn 0.3s ease-out !important;
+}
+
+/* Focus ring with cyan glow */
+.emby-button:focus,
+.emby-input:focus,
+.emby-select:focus,
+.raised:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(55, 150, 203, 0.4) !important;
+}
+
+/* Link hover effects */
+a {
+  transition: color 0.2s ease !important;
+}
+
+a:hover {
+  color: rgb(55, 150, 203) !important;
+}
+
+/* Icon buttons with hover animation */
+.paper-icon-button-light {
+  transition: transform 0.2s ease, background 0.2s ease !important;
+}
+
+.paper-icon-button-light:hover {
+  transform: scale(1.1) !important;
+  background: rgba(55, 150, 203, 0.2) !important;
+}
+
+.paper-icon-button-light:active {
+  transform: scale(0.95) !important;
+}
