@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root { 
-  --accent: 133, 100, 255; 
+  --accent: 55, 150, 203; 
   --backdropBlur: blur(0px); 
   --detailGradient: linear-gradient( 54deg, rgba(var(--tint), 1) 0%, rgba(var(--tint), 0.99996337890625) 6.25%, rgba(var(--tint), 0.9994140625) 12.5%, rgba(var(--tint), 0.99703369140625) 18.75%, rgba(var(--tint), 0.990625) 25%, rgba(var(--tint), 0.97711181640625) 31.25%, rgba(var(--tint), 0.9525390625) 37.5%, rgba(var(--tint), 0.91207275390625) 43.75%, rgba(var(--tint), 0.85) 50%, rgba(var(--tint), 0.78792724609375) 56.25%, rgba(var(--tint), 0.7474609375) 62.5%, rgba(var(--tint), 0.72288818359375) 68.75%, rgba(var(--tint), 0.709375) 75%, rgba(var(--tint), 0.70296630859375) 81.25%, rgba(var(--tint), 0.7005859375) 87.5%, rgba(var(--tint), 0.70003662109375) 93.75%, rgba(var(--tint), 0.7) 100%); 
   --loginGradient: linear-gradient( 180deg, rgba(var(--tint), 1) 0%, rgba(var(--tint), 0.99996337890625) 6.25%, rgba(var(--tint), 0.9994140625) 12.5%, rgba(var(--tint), 0.99703369140625) 18.75%, rgba(var(--tint), 0.990625) 25%, rgba(var(--tint), 0.97711181640625) 31.25%, rgba(var(--tint), 0.9525390625) 37.5%, rgba(var(--tint), 0.91207275390625) 43.75%, rgba(var(--tint), 0.85) 50%, rgba(var(--tint), 0.78792724609375) 56.25%, rgba(var(--tint), 0.7474609375) 62.5%, rgba(var(--tint), 0.72288818359375) 68.75%, rgba(var(--tint), 0.709375) 75%, rgba(var(--tint), 0.70296630859375) 81.25%, rgba(var(--tint), 0.7005859375) 87.5%, rgba(var(--tint), 0.70003662109375) 93.75%, rgba(var(--tint), 0.7) 100%); 
-  --tint: 17, 14, 30; 
-  --tint2: 71, 51, 145; 
+  --tint: 34, 33, 96; 
+  --tint2: 55, 150, 203; 
   --rounding: 0.8em;
 }
 
@@ -634,7 +634,7 @@ h1 {
     left: 4.5em;
     width: 30vw;
     height: 30vh;
-    animation: fadeLogo 0.5s 2s ease-out forwards;
+    animation: fadeLogo 0.5s 6.5s ease-out forwards;
     display: block;
     transform: translateX(-50%) translateY(-50%);
     opacity: 1;
@@ -4257,7 +4257,7 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
 
 .layout-desktop #indexPage .itemsContainer .card.backdropCard,
 .layout-tv #indexPage .itemsContainer .card.backdropCard {
-  flex: 1 0 calc((100% - (0.5rem * 2)) / 3);
+  flex: 1 0 calc((100% - (0.5rem * 2)) / 3) !important;
 }
 
 .layout-desktop .mediaInfoStream,
@@ -6672,8 +6672,8 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left center;
-  width: 180px;
-  height: 40px;
+  width: 220px !important;
+  height: 50px !important;
   margin-left: 10px;
 }
 
@@ -6683,8 +6683,8 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
 
 /* Mobile header logo */
 .layout-mobile .pageTitleWithDefaultLogo {
-  width: 140px;
-  height: 32px;
+  width: 160px !important;
+  height: 36px !important;
 }
 
 /* Detail page logo - full version with mountain backdrop */
@@ -6735,39 +6735,6 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
 .layout-tv #itemDetailPage .scrollSlider.itemsContainer { 
   flex-wrap: nowrap !important; 
   white-space: normal !important;
-}
-
-/* ========================================
-   LIBRARY CARD TEXT OVERLAYS
-   ======================================== */
-
-#homeTab .section0 .cardImageContainer::before {
-  content: attr(aria-label);
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 3em;
-  font-weight: bold;
-  color: white;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
-  padding: 0.2em 0.5em;
-  border-radius: 0em;
-  z-index: 10;
-  width: 93%;
-  height: 6em;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  text-align: center;
-}
-
-.layout-mobile #homeTab .section0 .cardImageContainer::before {
-  font-size: 1.5em;
-}
-
-.verticalSection.section0 .textActionButton {
-  display: none;
 }
 
 /* ========================================
@@ -6847,3 +6814,37 @@ button[data-direction="right"]:hover {
 /* ========================================
    END LUKEFLIX+ MAX ENHANCEMENTS
    ======================================== */
+
+/* ========================================
+   CUSTOM LOADING SCREEN
+   ======================================== */
+
+/* Loading spinner with logo */
+.docspinner {
+  background: #222160 !important;
+}
+
+.docspinner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 225px;
+  background-image: url('https://raw.githubusercontent.com/lukebepic/lukeflixplusmax/main/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Preload screen background */
+.backgroundContainer.preload {
+  background-color: #222160 !important;
+}
