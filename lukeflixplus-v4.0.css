@@ -1,0 +1,237 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   LukeFlix+ Max V4.0 - Smart Approach
+   Import GlassFin as base, override colors and add LukeFlix+ branding
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* Step 1: Import the proven, working GlassFin base */
+@import url("https://cdn.jsdelivr.net/gh/KBH-Reeper/GlassFin@main/Theme/GlassFin.css");
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Step 2: Override ROOT VARIABLES with LukeFlix+ Colors
+   ═══════════════════════════════════════════════════════════════════════════════ */
+:root {
+    /* Footer Text Override */
+    --FooterTextGlassFin: "LukeFlix+ Max V4.0" !important;
+    
+    /* LukeFlix+ Blue (#222160) and Cyan (#3796cb) Color Scheme */
+    --darkerGradientPoint: #222160 !important;
+    --darkerGradientPointAlpha: rgba(34, 33, 96, 0.85) !important;
+    --lighterGradientPoint: #2a2875 !important;
+    --lighterGradientPointAlpha: rgba(42, 40, 117, 0.85) !important;
+    --gradientPointAlpha: rgba(42, 40, 117, 0.3) !important;
+    
+    /* Header and Drawer Colors */
+    --headerColor: rgba(34, 33, 96, 0.8) !important;
+    --drawerColor: rgba(34, 33, 96, 0.9) !important;
+    
+    /* Active/Accent Color - LukeFlix+ Cyan */
+    --activeColorAlpha: rgba(55, 150, 203, 0.9) !important;
+    --activeColor: #3796cb !important;
+    --uiAccentColor: #3796cb !important;
+    
+    /* Background Gradient - LukeFlix+ Radial Blue */
+    --backgroundGradient: radial-gradient(ellipse at center, #222160 0%, #1a1850 50%, #0f0d2e 100%) !important;
+    
+    /* Login Page Text */
+    --loginPageText: "Sign in to LukeFlix+" !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Step 3: Detail Page Logo - Top Right Watermark (280×160px, 20% opacity)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+.detailLogo {
+    display: block !important;
+    position: absolute !important;
+    top: 2em !important;
+    right: 2em !important;
+    width: 280px !important;
+    height: 160px !important;
+    opacity: 0.2 !important;
+    background-image: url('https://cdn.jsdelivr.net/gh/lukebepic/lukeflixplusmax@main/logo.png') !important;
+    background-position: center !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+}
+
+.layout-mobile .detailLogo {
+    width: 200px !important;
+    height: 113px !important;
+    top: 1em !important;
+    right: 1em !important;
+}
+
+/* Hide title when logo is present */
+.detailLogo:not(.hide) ~ .detailPageWrapperContainer .nameContainer h1 {
+    display: none !important;
+}
+
+.detailLogo.hide ~ .detailPageWrapperContainer .nameContainer h1 {
+    display: block !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Step 4: Home Page Watermark (80vw max 1200px, 12% opacity)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+#indexPage {
+    position: relative;
+}
+
+#indexPage::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    max-width: 1200px;
+    height: 45vw;
+    max-height: 675px;
+    background-image: url('https://cdn.jsdelivr.net/gh/lukebepic/lukeflixplusmax@main/logo-transparent.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure content appears above watermark */
+#indexPage > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Step 5: Search Page Watermark (80vw max 1200px, 10% opacity)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+#searchPage {
+    position: relative;
+}
+
+#searchPage::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    max-width: 1200px;
+    height: 45vw;
+    max-height: 675px;
+    background-image: url('https://cdn.jsdelivr.net/gh/lukebepic/lukeflixplusmax@main/logo-transparent.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.10;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#searchPage > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Step 6: Login Page Logo (450×250px centered above form)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+#loginPage .padded-left.padded-right.padded-bottom-page::before {
+    content: "";
+    display: block;
+    width: 450px;
+    height: 250px;
+    max-width: 90vw;
+    margin: -2em auto 2em;
+    background-image: url('https://cdn.jsdelivr.net/gh/lukebepic/lukeflixplusmax@main/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.layout-mobile #loginPage .padded-left.padded-right.padded-bottom-page::before {
+    width: 350px;
+    height: 195px;
+    margin: -1em auto 1.5em;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Step 7: Loading Screen Logo (500×280px with pulse animation)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+.docspinner::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 280px;
+    max-width: 80vw;
+    background-image: url('https://cdn.jsdelivr.net/gh/lukebepic/lukeflixplusmax@main/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: lukepulse 2s ease-in-out infinite;
+    z-index: 999;
+}
+
+@keyframes lukepulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Step 8: Additional LukeFlix+ Touch-ups
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* Make sure progress bars use cyan */
+.itemProgressBarForeground {
+    background-color: #3796cb !important;
+    box-shadow: 0 0 12px rgba(55, 150, 203, 0.8) !important;
+}
+
+/* Cyan hover on cards */
+.card-hoverable:hover .cardScalable {
+    border-color: #3796cb !important;
+}
+
+/* Cyan active navigation */
+.navMenuOption-selected,
+.Mui-selected {
+    background-color: rgba(55, 150, 203, 0.4) !important;
+}
+
+/* Cyan buttons */
+.button-submit,
+.btnPlay {
+    background-color: #3796cb !important;
+    border-color: rgba(55, 150, 203, 0.5) !important;
+}
+
+.button-submit:hover,
+.btnPlay:hover {
+    background-color: #4da8d9 !important;
+}
+
+/* Blue rating badges */
+.mediaInfoOfficialRating {
+    border-color: #3796cb !important;
+    color: #3796cb !important;
+}
+
+/* Ensure LukeFlix+ blue is used for card backgrounds */
+.cardBox:not(.visualCardBox) .cardPadder,
+.defaultCardBackground {
+    background: linear-gradient(0deg, #222160, #2a2875 25%) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   END OF LUKEFLIX+ V4.0 CUSTOMIZATIONS
+   
+   This approach:
+   1. Uses proven GlassFin base (all layouts work)
+   2. Overrides colors to LukeFlix+ blue/cyan
+   3. Adds LukeFlix+ logos in all locations
+   4. Keeps all the working card sizing, grid layouts, etc.
+   ═══════════════════════════════════════════════════════════════════════════════ */
