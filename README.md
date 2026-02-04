@@ -1,3 +1,13 @@
+This is my remaining completely public, but just more suited for me version of the amazing Finimalism by tedhinklater. No claims to design are being made by me - I just loved what he did and wanted to style it more to my taste :)
+
+The original files can be accessed at his links below, and have also been kept in this repository so no misunderstandings about original creation can be made.
+
+~ Luke
+
+
+The Original:
+
+
 # Finimalism for Jellyfin v10.11.x  ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/tedhinklater/finimalism/badge) 
 
 ```css
