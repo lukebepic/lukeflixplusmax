@@ -2,6 +2,8 @@ This is my remaining completely public, but just more suited for me version of t
 
 The original files can be accessed at his links below, and have also been kept in this repository so no misunderstandings about original creation can be made.
 
+Importing my version: @import url('https://cdn.jsdelivr.net/gh/lukebepic/lukeflixplusmax@main/lukeflixplusmax.css');
+
 ~ Luke
 
 
